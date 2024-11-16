@@ -29,10 +29,10 @@ docker compose up --build
 ```
 
 ## Запуск в локальной среде
-С помощью python3.11
+С помощью `python3.11`
 ```bash
 python3 -m venv .venv
-. ".venv/bin/activate"
+source ".venv/bin/activate"
 pip install -r requirements.txt
 python3 main.py
 ```
