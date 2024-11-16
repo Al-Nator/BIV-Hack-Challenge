@@ -3,6 +3,7 @@
 *.py[cod]
 *$py.class
 **.DS_Store
+**test_predictions_2_models_gree*.tsv
 
 # C extensions
 *.so
