@@ -9,10 +9,14 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s:%(mess
 if __name__ == "__main__":
     # Парсинг аргументов командной строки
     parser = argparse.ArgumentParser(description="Проект по классификации описаний платежей по категориям от команды MMG")
-    parser.add_argument("--model", type=str, default="./src/models/classifier.dill", help="Путь к файлу модели")
-    parser.add_argument("--vectorizer", type=str, default="./src/models/tf-idf-vectorizer.dill", help="Путь к файлу векторизатора")
-    parser.add_argument("--input", type=str, default="./input/payments_main.tsv", help="Путь к входному TSV файлу с данными")
-    parser.add_argument("--output", type=str, default="./output/predictions.tsv", help="Путь к выходному TSV файлу с предсказаниями")
+    arguments = [
+        ("--model", "./src/models/classifier.dill", "Путь к файлу модели"),
+        ("--vectorizer", "./src/models/tf-idf-vectorizer.dill", "Путь к файлу векторизатора"),
+        ("--input", "./input/payments_main.tsv", "Путь к входному TSV файлу с данными"),
+        ("--output", "./output/predictions.tsv", "Путь к выходному TSV файлу с предсказаниями")
+    ]
+    for argument in arguments:
+        parser.add_argument(argument[0], type=str, default=argument[1], help=argument[2])
 
     # Парсим аргументы
     args = parser.parse_args()

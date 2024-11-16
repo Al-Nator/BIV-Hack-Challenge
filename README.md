@@ -18,6 +18,11 @@
 * pandas, numpy – работа с данными
 * dill – сохранение и загрузка обученных моделей
 
+## Загрузка
+```bash
+git clone https://github.com/kekwak/BIV-Hack-Challenge.git && cd BIV-Hack-Challenge
+```
+
 ## Запуск в контейнере
 ```bash
 docker compose up --build
