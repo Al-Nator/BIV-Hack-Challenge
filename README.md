@@ -1,3 +1,5 @@
+![MMG_BIV-1](https://github.com/user-attachments/assets/b0882bb2-c004-4c4a-ae85-6bbb8437a4f2)
+
 # BIV Hack Challenge – Команда MMG
 Кейс Автоматизация разбора платежей
 
