@@ -20,19 +20,19 @@
 
 ## Загрузка
 Склонируйте репозиторий
-```bash
+```nushell
 git clone https://github.com/kekwak/BIV-Hack-Challenge.git && cd BIV-Hack-Challenge
 ```
 И переместите файл с данными по пути input/payments_main.tsv
 
 ## Запуск в контейнере
-```bash
+```nushell
 docker compose up --build
 ```
 
 ## Запуск в локальной среде
 С помощью `python3.11`
-```bash
+```nushell
 python3 -m venv .venv
 source ".venv/bin/activate"
 pip install -r requirements.txt
@@ -40,11 +40,11 @@ python3 main.py
 ```
 
 ## Особые аргументы
-```bash
+```nushell
 python3 main.py --help
 ```
 
-```bash
+```nushell
 usage: main.py [-h] [--model MODEL] [--vectorizer VECTORIZER] [--input INPUT] [--output OUTPUT]
 
 Проект по классификации описаний платежей по категориям от команды MMG
