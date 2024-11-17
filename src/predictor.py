@@ -1,9 +1,10 @@
+from src.correction import load_words_from_file, custom_tokenizer
 from src.model_loader import load_model, load_vectorizer
 from src.data_loader import load_data
 import logging
 import sys
 
-def predict(model_path, vectorizer_path, file_path):
+def predict(model_path, vectorizer_path, dictionary_file_path, file_path):
     """
     Загружает модель, векторизатор и данные, затем предсказывает категории для текстовых данных.
 
@@ -23,6 +24,10 @@ def predict(model_path, vectorizer_path, file_path):
     if "text" not in data.columns:
         logging.error("В данных отсутствует столбец \"text\"")
         sys.exit(1)
+
+    # Исправление опечаток
+    dictionary = load_words_from_file(dictionary_file_path)
+    data['text'] = data['text'].apply(lambda x: custom_tokenizer(x, dictionary))
 
     # Преобразуем текстовые данные с помощью векторизатора
     X_test = vectorizer.transform(data["text"])

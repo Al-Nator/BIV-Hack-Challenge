@@ -12,6 +12,7 @@ if __name__ == "__main__":
     arguments = [
         ("--model", "./src/models/classifier.dill", "Путь к файлу модели"),
         ("--vectorizer", "./src/models/tf-idf-vectorizer.dill", "Путь к файлу векторизатора"),
+        ("--dictionary", "./src/dictionary/russian.txt", "Путь к файлу со словарем для исправления опечаток"),
         ("--input", "./input/payments_main.tsv", "Путь к входному TSV файлу с данными"),
         ("--output", "./output/predictions.tsv", "Путь к выходному TSV файлу с предсказаниями")
     ]
@@ -24,7 +25,7 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
 
     # Выполняем предсказание
-    data_final = predict(args.model, args.vectorizer, args.input)
+    data_final = predict(args.model, args.vectorizer, args.dictionary, args.input)
 
     # Сохраняем результат в TSV файл без индексов и заголовков
     data_final.to_csv(args.output, sep="\t", index=False, header=False)

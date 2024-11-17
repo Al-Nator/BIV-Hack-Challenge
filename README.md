@@ -19,9 +19,11 @@
 * dill – сохранение и загрузка обученных моделей
 
 ## Загрузка
+Склонируйте репозиторий
 ```bash
 git clone https://github.com/kekwak/BIV-Hack-Challenge.git && cd BIV-Hack-Challenge
 ```
+И переместите файл с данными по пути input/payments_main.tsv
 
 ## Запуск в контейнере
 ```bash
